@@ -1,17 +1,24 @@
 // Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
 
-Shader "Skybox/Cubemap" {
+Shader "Portal/PortalSky" {
 Properties {
     _Tint ("Tint Color", Color) = (.5, .5, .5, .5)
     [Gamma] _Exposure ("Exposure", Range(0, 8)) = 1.0
     _Rotation ("Rotation", Range(0, 360)) = 0
     [NoScaleOffset] _Tex ("Cubemap   (HDR)", Cube) = "grey" {}
+    _Stencil("StencilNum", int) = 6
+
 }
 
 SubShader {
     Tags { "Queue"="Background" "RenderType"="Background" "PreviewType"="Skybox" }
     Cull Off ZWrite Off
+    Blend SrcAlpha OneMinusSrcAlpha
 
+    Stencil{
+        Ref 1
+        Comp[_Stencil]
+    }
     Pass {
 
         CGPROGRAM
@@ -64,7 +71,7 @@ SubShader {
             half3 c = DecodeHDR (tex, _Tex_HDR);
             c = c * _Tint.rgb * unity_ColorSpaceDouble.rgb;
             c *= _Exposure;
-            return half4(c, 1);
+            return half4(c, 0.5);
         }
         ENDCG
     }

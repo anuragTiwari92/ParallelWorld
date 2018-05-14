@@ -1,10 +1,11 @@
 // Unity built-in shader source. Copyright (c) 2016 Unity Technologies. MIT license (see license.txt)
 
-Shader "Particles/Alpha Blended" {
+Shader "Portal/particles" {
 Properties {
     _TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
     _MainTex ("Particle Texture", 2D) = "white" {}
     _InvFade ("Soft Particles Factor", Range(0.01,3.0)) = 1.0
+    _Stencil("StencilNum", int) = 6
 }
 
 Category {
@@ -14,6 +15,10 @@ Category {
     Cull Off Lighting Off ZWrite Off
 
     SubShader {
+        Stencil{
+            Ref 1
+            Comp[_Stencil]
+        }
         Pass {
 
             CGPROGRAM
