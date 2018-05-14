@@ -650,6 +650,7 @@ GameObject:
   - component: {fileID: 809623967}
   - component: {fileID: 809623969}
   - component: {fileID: 809623968}
+  - component: {fileID: 809623970}
   m_Layer: 0
   m_Name: ashe and dust
   m_TagString: Untagged
@@ -709,8 +710,8 @@ ParticleSystemRenderer:
   m_SortingOrder: 0
   m_RenderMode: 0
   m_SortMode: 0
-  m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MinParticleSize: 0.01
+  m_MaxParticleSize: 0.15
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -734,7 +735,7 @@ ParticleSystem:
   m_GameObject: {fileID: 809623966}
   serializedVersion: 5
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 0.09
   stopAction: 0
   looping: 1
   prewarm: 0
@@ -1296,7 +1297,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5257,6 +5258,17 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &809623970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 809623966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bb1b1b16c784cd4bf8599123c83dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1121666029
 GameObject:
   m_ObjectHideFlags: 0
@@ -5508,6 +5520,7 @@ GameObject:
   - component: {fileID: 1607344239}
   - component: {fileID: 1607344241}
   - component: {fileID: 1607344240}
+  - component: {fileID: 1607344242}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
@@ -10115,6 +10128,17 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1607344242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1607344238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bb1b1b16c784cd4bf8599123c83dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1905113273
 GameObject:
   m_ObjectHideFlags: 0
