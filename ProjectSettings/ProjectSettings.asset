@@ -620,7 +620,12 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 1
   webGLLinkerTarget: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: CROSS_PLATFORM_INPUT
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    14: MOBILE_INPUT
+    17: MOBILE_INPUT
   platformArchitecture:
     iOS: 2
   scriptingBackend:
@@ -747,7 +752,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: f5d7070c-87d0-4b13-a56f-c3fec721dcfd
-  projectName: 
+  projectName: ParallelWorld
   organizationId: anuragt1992
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
